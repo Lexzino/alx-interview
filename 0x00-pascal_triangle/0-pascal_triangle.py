@@ -1,25 +1,24 @@
 #!/usr/bin/python3
-'''
-Working modulues of a Pascal's triangle.
-'''
+"""
+Working module of a Pascal's triangle.
+"""
 
 
 def pascal_triangle(n):
-    '''Create a list of integers for the
-     Pascal's triangle of a given integer.
-    '''
-    
+    """Create a function def pascal_triangle(n): that returns a list of lists
+    of integers representing the Pascal’s triangle of n
+    """
     if n <= 0:
         return []
 
     triangle = []
-    for i in range(n):
+    for b in range(n):
         row = []
-        for j in range(i + 1):
-            if j == 0 or j == i:
+        for c in range(b + 1):
+            if c == 0 or c == b:
                 row.append(1)
             else:
-                row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
+                row.append(triangle[b - 1][c - 1] + triangle[b - 1][c])
         triangle.append(row)
 
     return triangle
